@@ -5,3 +5,15 @@
 .rowComb, .rowComb2 {
     display: flex;
 }
+
+.button {
+    height: 20px;
+    width: 20px;
+    margin: 5px;
+}
+
+#equals, #clear {
+    height: 50px;
+    width: 20px;
+    margin: 5px;
+}
