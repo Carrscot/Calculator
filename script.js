@@ -35,4 +35,7 @@ function operate (){
     else if (operator === '/') {
         divide(num1, num2)
     }
+    else {
+        return ''
+    }
 }
