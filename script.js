@@ -39,3 +39,12 @@ function operate (){
         return ''
     }
 }
+
+const buttonClick = document.querySelectorAll('button')
+    
+    buttonClick.forEach((button) => {button.addEventListener('click', ()=>{display.textContent = button.id
+} 
+)});
+
+
+const display = document.querySelector('.display')
