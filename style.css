@@ -35,7 +35,7 @@
     padding: 1px;
 }
 
-#equals, #clear {
+.equals, .clear {
     height: 50px;
     width: 20px;
     margin: 5px;

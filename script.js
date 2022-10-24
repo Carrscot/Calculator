@@ -1,6 +1,32 @@
 let operator;
+
 const num1 = '' ;
 const num2 = '' ;
+const buttonClick = document.querySelectorAll('button')
+    
+    let digitClick = buttonClick.forEach((button) => {button.addEventListener('click', () =>{
+        const display = document.querySelector('.display');
+        const displayedNum = display.textContent;
+        
+        if (display.textContent === '0' && button.className != 'clear') {
+            display.textContent = button.id
+        }
+        
+        else if (button.className === 'clear') {
+            display.textContent = '0'
+        }
+        
+        else {display.textContent = displayedNum + button.id;
+        }
+
+    }
+)});
+
+
+
+
+
+
 
 function add (num1, num2) {
     return num1 + num2
@@ -40,11 +66,3 @@ function operate (){
     }
 }
 
-const buttonClick = document.querySelectorAll('button')
-    
-    buttonClick.forEach((button) => {button.addEventListener('click', ()=>{display.textContent = button.id
-} 
-)});
-
-
-const display = document.querySelector('.display')

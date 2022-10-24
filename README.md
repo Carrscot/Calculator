@@ -11,7 +11,7 @@ This will be done in several stages begining with pseudocoding then programming 
 
 
 2) UI
-  a) 
+  a) on click >>> return button.id and display >>> hold that return in a variable >>> concant with next click
 
 
 3) Linking
