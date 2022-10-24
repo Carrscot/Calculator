@@ -8,10 +8,14 @@ const buttonClick = document.querySelectorAll('button')
         const display = document.querySelector('.display');
         const displayedNum = display.textContent;
         
-        if (display.textContent === '0' && button.className != 'clear') {
+        if (display.textContent === '0' && Number.isInteger(button.id)) {
             display.textContent = button.id
         }
         
+        else if (button.className === 'button decimal' && !display.textContent.includes('.')) {
+            display.textContent = displayedNum + '.'
+        }
+
         else if (button.className === 'clear') {
             display.textContent = '0'
         }
