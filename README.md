@@ -15,4 +15,5 @@ This will be done in several stages begining with pseudocoding then programming 
 
 
 3) Linking
-  a)
+  a) Figure out how to store the number as a variable after an operator has been clicked >>> try using an array or object method??
+											 >>> Object [ num1: X , num2: y] then use this.num1 'operator' this.num2???

@@ -1,18 +1,16 @@
-let operator;
-
 const num1 = '' ;
 const num2 = '' ;
 const buttonClick = document.querySelectorAll('button')
     
-    let digitClick = buttonClick.forEach((button) => {button.addEventListener('click', () =>{
+    const digitClick = buttonClick.forEach((button) => {button.addEventListener('click', () =>{
         const display = document.querySelector('.display');
         const displayedNum = display.textContent;
         
-        if (display.textContent === '0' && Number.isInteger(button.id)) {
+        if (display.textContent === '0' && button.className != 'operator' && button.className != 'equals') {
             display.textContent = button.id
         }
         
-        else if (button.className === 'button decimal' && !display.textContent.includes('.')) {
+        else if (button.className === 'decimal' && !display.textContent.includes('.')) {
             display.textContent = displayedNum + '.'
         }
 
@@ -25,7 +23,6 @@ const buttonClick = document.querySelectorAll('button')
 
     }
 )});
-
 
 
 

@@ -28,7 +28,7 @@
     margin: 5px;
     padding: 1px;
 }
-.button {
+.number, .operator, .decimal {
     height: 20px;
     width: 20px;
     margin: 5px;
