@@ -1,7 +1,12 @@
+//globals
+
 let num1;
 let num2;
-let solution;
+let solution = '';
 let operator
+
+// DOM 
+
 const buttonClick = document.querySelectorAll('button')
     
     const digitClick = buttonClick.forEach((button) => {button.addEventListener('click', () =>{
@@ -52,16 +57,16 @@ const buttonClick = document.querySelectorAll('button')
         }
 
         else if (button.className === 'equals') {
-            parseFloat(num1)
-            parseFloat(num2)
+            num2 = displayedNum.toString();
             console.log(num1)
             console.log(num2)
+            console.log(solution)
             
             if (solution === '') {
                 operate(num1, num2)
             }
 
-            else if ( solution > 0) {
+            else if (solution > 0) {
                 operate(solution, num2)
             }
         }
@@ -72,7 +77,7 @@ const buttonClick = document.querySelectorAll('button')
 
 
 
-
+// operator functions
 
 function add (num1, num2) {
     solution = num1 + num2
