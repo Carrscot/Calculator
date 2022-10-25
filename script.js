@@ -1,6 +1,7 @@
 let num1;
 let num2;
 let solution;
+let operator
 const buttonClick = document.querySelectorAll('button')
     
     const digitClick = buttonClick.forEach((button) => {button.addEventListener('click', () =>{
@@ -19,14 +20,35 @@ const buttonClick = document.querySelectorAll('button')
             display.textContent = '0'
         }
         
-        else if (button.className === 'number') {
+        else if (button.className === 'number' ||button.className === 'zero') {
             display.textContent = displayedNum + button.id;
         }
 
         else if (button.className === 'operator') {
             num1 = displayedNum.toString();
+            display.textContent = '0'
             console.log(num1);
-            display.textContent = ''
+
+            switch (true) {
+                case button.textContent.includes('+'):
+                operator = '+';
+                break;
+
+                case button.textContent.includes('-'):
+                    operator = '-';
+                break;
+
+                case button.textContent.includes('*'):
+                    operator = '*';
+                break;
+
+                case button.textContent.includes('/'):
+                    operator = '/';
+                break;
+
+            }
+
+            console.log(operator)
         }
 
         else if (button.className === 'equals') {
@@ -34,6 +56,14 @@ const buttonClick = document.querySelectorAll('button')
             parseFloat(num2)
             console.log(num1)
             console.log(num2)
+            
+            if (solution === '') {
+                operate(num1, num2)
+            }
+
+            else if ( solution > 0) {
+                operate(solution, num2)
+            }
         }
 
     }
@@ -45,37 +75,41 @@ const buttonClick = document.querySelectorAll('button')
 
 
 function add (num1, num2) {
-    return num1 + num2
+    solution = num1 + num2
 }
 
 function subtract (num1, num2) {
-    return num1 - num2
+    solution = num1 - num2
 }
 
 function multiply (num1, num2) {
-    return num1 * num2
+    solution = num1 * num2
 }
 
 function divide (num1, num2) {
-    return num1 / num2
+    solution = num1 / num2
 }
 
 function operate (){
 
     if (operator === '+') {
         add(num1, num2)
+        display.textContent = solution
     }
 
     else if (operator === '-') {
         subtract(num1, num2)
+        display.textContent = solution
     }
 
     else if (operator === '*') {
         multiply(num1, num2)
+        display.textContent = solution
     }
 
     else if (operator === '/') {
         divide(num1, num2)
+        display.textContent = solution
     }
     else {
         return ''
