@@ -1,5 +1,6 @@
-const num1 = '' ;
-const num2 = '' ;
+let num1;
+let num2;
+let solution;
 const buttonClick = document.querySelectorAll('button')
     
     const digitClick = buttonClick.forEach((button) => {button.addEventListener('click', () =>{
@@ -18,7 +19,21 @@ const buttonClick = document.querySelectorAll('button')
             display.textContent = '0'
         }
         
-        else {display.textContent = displayedNum + button.id;
+        else if (button.className === 'number') {
+            display.textContent = displayedNum + button.id;
+        }
+
+        else if (button.className === 'operator') {
+            num1 = displayedNum.toString();
+            console.log(num1);
+            display.textContent = ''
+        }
+
+        else if (button.className === 'equals') {
+            parseFloat(num1)
+            parseFloat(num2)
+            console.log(num1)
+            console.log(num2)
         }
 
     }
