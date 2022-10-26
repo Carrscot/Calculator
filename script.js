@@ -61,17 +61,12 @@ const buttonClick = document.querySelectorAll('button')
         }
 
         else if (button.className === 'equals') {
-            num2 = displayedNum.toString();
+            num2 = displayedNum;
             console.log(num1)
             console.log(num2)
-            
-            if (solution === '') {
-                operate(num1, num2)
-            }
+            console.log(operator)
+            operate(num1, num2)
 
-            else if (solution > 0) {
-                operate(solution, num2)
-            }
         }
 
     }
@@ -85,28 +80,24 @@ const buttonClick = document.querySelectorAll('button')
 function add (num1, num2) {
     const display = document.querySelector('.display')
     display.textContent = parseFloat(num1) + parseFloat(num2);
-    return parseFloat(num1) + parseFloat(num2);
 }
 
 function subtract (num1, num2) {
     const display = document.querySelector('.display')
     display.textContent = parseFloat(num1) - parseFloat(num2);
-    return parseFloat(num1) - parseFloat(num2);
 }
 
 function multiply (num1, num2) {
     const display = document.querySelector('.display')
     display.textContent = parseFloat(num1) * parseFloat(num2);
-    return parseFloat(num1) * parseFloat(num2);
 }
 
 function divide (num1, num2) {
     const display = document.querySelector('.display')
-    display.textContent = parseFloat(num1) + parseFloat(num2);
-    return parseFloat(num1) / parseFloat(num2);
+    display.textContent = parseFloat(num1) / parseFloat(num2);
 }
 
-function operate (){
+function operate (num1, num2){
 
     if (operator === '+') {
         add(num1, num2)
