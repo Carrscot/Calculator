@@ -12,7 +12,7 @@ const buttonClick = document.querySelectorAll('button')
         const display = document.querySelector('.display');
         const displayedNum = display.textContent;
         
-        if (display.textContent === '0' && button.className != 'operator' && button.className != 'equals') {
+        if (display.textContent === '0' && button.className != 'operator' && button.className != 'equals' && button.className != 'clear') {
             display.textContent = button.id
         }
         
@@ -20,11 +20,7 @@ const buttonClick = document.querySelectorAll('button')
             display.textContent = displayedNum + '.'
         }
 
-        else if (button.className === 'clear') {
-            display.textContent = '0'
-        }
-        
-        else if (button.className === 'number' ||button.className === 'zero') {
+        else if (button.className === 'number' || button.className === 'zero') {
             display.textContent = displayedNum + button.id;
         }
 
@@ -35,7 +31,7 @@ const buttonClick = document.querySelectorAll('button')
 
             switch (true) {
                 case button.textContent.includes('+'):
-                operator = '+';
+                    operator = '+';
                 break;
 
                 case button.textContent.includes('-'):
@@ -55,9 +51,22 @@ const buttonClick = document.querySelectorAll('button')
             console.log(operator)
         }
 
-        else if (button.className === 'operator' && operator !='') {
-            display.textContent = '0'
-            operate(num1, num2)
+        else if (num1 > 0 && button.className != 'operator' && button.className != 'equals' && button.className != 'clear') {
+            display.textContent = button.id;
+            num1 = displayedNum.toString();
+        }
+
+        else if (button.className === 'clear') {
+            display.textContent = '0';
+            num1 = '';
+            num2 = '';
+            operator = '';
+        }        
+
+        else if (button.className === 'operator' && operator != null) {
+            num2 = displayedNum;
+            operate(num1,num2);
+            console.log(num1);
         }
 
         else if (button.className === 'equals') {
@@ -80,21 +89,25 @@ const buttonClick = document.querySelectorAll('button')
 function add (num1, num2) {
     const display = document.querySelector('.display')
     display.textContent = parseFloat(num1) + parseFloat(num2);
+    return parseFloat(num1) + parseFloat(num2);
 }
 
 function subtract (num1, num2) {
     const display = document.querySelector('.display')
     display.textContent = parseFloat(num1) - parseFloat(num2);
+    return parseFloat(num1) - parseFloat(num2);
 }
 
 function multiply (num1, num2) {
     const display = document.querySelector('.display')
     display.textContent = parseFloat(num1) * parseFloat(num2);
+    return parseFloat(num1) * parseFloat(num2);
 }
 
 function divide (num1, num2) {
     const display = document.querySelector('.display')
     display.textContent = parseFloat(num1) / parseFloat(num2);
+    return parseFloat(num1) / parseFloat(num2);
 }
 
 function operate (num1, num2){

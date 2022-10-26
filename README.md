@@ -23,3 +23,4 @@ b) Logic >>> When an operator or the equals button is clicked the number is stor
 	 >>> Number in dispaly.textContent after an operator or equals is clicked is num2.
 	 >>> operate(num1, num2) should yeild the stored number (operator) number currently on display
 	 >>> When either the operator or equals is clicked the display should yeild the result of operate(num1,num2)
+	 >>> Ensure that operations continue when clicking operators > currently not storing number properly.
