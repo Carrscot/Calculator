@@ -18,3 +18,8 @@ This will be done in several stages begining with pseudocoding then programming 
   a) Figure out how to store the number as a variable after an operator has been clicked >>> try using an array or object method?? xxx
 											 >>> Object [ num1: X , num2: y] then use this.num1 'operator' this.num2??? xxx
 											 >>> store using toString <<<<
+  
+b) Logic >>> When an operator or the equals button is clicked the number is stored as num1.
+	 >>> Number in dispaly.textContent after an operator or equals is clicked is num2.
+	 >>> operate(num1, num2) should yeild the stored number (operator) number currently on display
+	 >>> When either the operator or equals is clicked the display should yeild the result of operate(num1,num2)
