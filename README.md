@@ -24,3 +24,10 @@ b) Logic >>> When an operator or the equals button is clicked the number is stor
 	 >>> operate(num1, num2) should yeild the stored number (operator) number currently on display
 	 >>> When either the operator or equals is clicked the display should yeild the result of operate(num1,num2)
 	 >>> Ensure that operations continue when clicking operators > currently not storing number properly.
+	 >>> if operator has been clicked and current display is not '0' display.textConent = button.id
+	 >>> when operator is clicked a second time it changes from num1, num2 = solution >>> num1=solution, num2 =displayedNum
+
+		Figure out dispaly problem
+
+
+
