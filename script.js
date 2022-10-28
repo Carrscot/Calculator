@@ -13,6 +13,8 @@ const buttonClick = document.querySelectorAll('button');
         const display = document.querySelector('.display');
         const displayedNum = display.textContent;
         
+    if (display.textContent.length <= 10){
+
         if (display.textContent === '0' && button.className != 'operator' && button.className != 'equals' && button.className != 'clear') {
             display.textContent = button.id;
             console.log('problem1');
@@ -22,12 +24,12 @@ const buttonClick = document.querySelectorAll('button');
             display.textContent = displayedNum + '.';
         }
 
-        else if (display.textContent != '0' && button.className === 'number' || button.className === 'zero') {
-            display.textContent = displayedNum + button.id;
-            console.log('this is the problem2');
+        else if(display.textContent != '0' && operator != '' && button.className != 'operator' && button.className != 'equals' && button.className != 'clear' && display.textContent.length < 1) {
+            display.textContent = button.id;
+            console.log('problem2');
         }
 
-        else if(display.textContent != '0' && operator != '' && button.className != 'operator' && button.className != 'equals' && button.className != 'clear') {
+        else if(display.textContent != '0' && operator != '' && button.className != 'operator' && button.className != 'equals' && button.className != 'clear' && display.textContent === `${solution}`) {
             display.textContent = button.id;
             console.log('problem2');
         }
@@ -51,17 +53,8 @@ const buttonClick = document.querySelectorAll('button');
             display.textContent = '0'
             operator = '';
             operatorSign()
-        console.log(operator)
-    }
-
-        else if (button.className === 'clear') {
-            display.textContent = '0';
-            num1 = '';
-            num2 = '';
-            operator = '';
-            solution = '';
-        }        
-
+            console.log(operator)
+    }   
 
         else if (button.className === 'equals') {
             num2 = displayedNum;
@@ -88,9 +81,28 @@ const buttonClick = document.querySelectorAll('button');
                     operator = '/';
                 break;
 
-        }}
+            }
+        }
+    } 
+    
+    else if (button.className === 'clear') {
+        display.textContent = '0';
+        num1 = '';
+        num2 = '';
+        operator = '';
+        solution = '';
+        const failure = document.querySelector('.failDisplay');
+        failure.textContent = '';
+    }  
+    
+    else {
+        const failure = document.querySelector('.failDisplay');
+        failure.textContent = 'This number exceeds the capacity of the display'
     }
+}
 )});
+
+
 
 
 
@@ -100,25 +112,25 @@ const buttonClick = document.querySelectorAll('button');
 function add (num1, num2) {
     const display = document.querySelector('.display');
     solution = parseFloat(num1) + parseFloat(num2);
-    display.textContent = solution;
+    display.textContent = Math.round((solution + Number.EPSILON) * 100) / 100;
 }
 
 function subtract (num1, num2) {
     const display = document.querySelector('.display');
     solution = parseFloat(num1) - parseFloat(num2);
-    display.textContent = solution;
+    display.textContent = Math.round((solution + Number.EPSILON) * 100) / 100;
 }
 
 function multiply (num1, num2) {
     const display = document.querySelector('.display');
     solution = parseFloat(num1) * parseFloat(num2);
-    display.textContent = solution;
+    display.textContent = Math.round((solution + Number.EPSILON) * 100) / 100;
 }
 
 function divide (num1, num2) {
     const display = document.querySelector('.display');
     solution = parseFloat(num1) / parseFloat(num2);
-    display.textContent = solution;
+    display.textContent = Math.round((solution + Number.EPSILON) * 100) / 100;
 }
 
 function operate (num1, num2){
@@ -142,32 +154,3 @@ function operate (num1, num2){
         return ''
     }
 }
-
-
-
-
-
-//else if (num1 > 0 && button.className != 'operator' && button.className != 'equals' && button.className != 'clear') {
-//    display.textContent = button.id;
-//    num1 = displayedNum.toString();
-//    
-//    switch (true) {
-//        case button.textContent.includes('+'):
-//            operator = '+';
-//        break;
-
-//        case button.textContent.includes('-'):
-//            operator = '-';
-//        break;
-
-//        case button.textContent.includes('*'):
-//            operator = '*';
-//        break;
-
-//        case button.textContent.includes('/'):
-//            operator = '/';
-//        break;
-        
-//}
-//console.log(operator)
-//}
