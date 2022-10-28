@@ -1,3 +1,22 @@
+body {
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 200px;
+    margin-bottom: 300px;
+    background-image: linear-gradient(to bottom right, rgb(6, 206, 241), rgb(245, 245, 242))
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    border-radius: 5px;
+    width: 300px;
+    height: 450px;
+}
+
 .row1, .row2, .row3, .row4, .row5{
     display: flex;
     }
@@ -23,28 +42,37 @@
     border-color: black;
     border-radius: 5px;
     border-width: 1px;
-    width: 106px;
-    height: 20px;
-    margin: 5px;
+    width: 294px;
+    height: 73px;
+    margin: 1px;
     padding: 1px;
+    font-size: 58px;
 }
+
+button {
+    margin: 1px;
+}
+
 .number, .operator, .decimal {
-    height: 20px;
-    width: 20px;
-    margin: 5px;
-    padding: 1px;
+    height: 73px;
+    width: 73px;
+
 }
 
 .equals, .clear {
-    height: 50px;
-    width: 20px;
-    margin: 5px;
-    padding: 1px;
+    height: 148px;
+    width: 73px;
+
 }
 
 .zero {
-    height: 20px;
-    width: 50px;
-    margin: 5px;
-    padding: 1px;
+    height: 73px;
+    width: 148px;
+
+}
+
+.failDisplay {
+    font-size: large;
+    color: rgb(206, 27, 27);
+
 }

@@ -13,7 +13,7 @@ const buttonClick = document.querySelectorAll('button');
         const display = document.querySelector('.display');
         const displayedNum = display.textContent;
         
-    if (display.textContent.length <= 10){
+    if (display.textContent.length < 10){
 
         if (display.textContent === '0' && button.className != 'operator' && button.className != 'equals' && button.className != 'clear') {
             display.textContent = button.id;
@@ -39,6 +39,10 @@ const buttonClick = document.querySelectorAll('button');
             console.log('this is the problem2');
         }
 
+        else if (display.textContent != '0' && button.className === 'number' || button.className === 'zero') {
+            display.textContent = displayedNum + button.id;
+            console.log('this is the problem2');
+        }
 
         else if (button.className === 'operator' && operator != '') {
             num2 = displayedNum;
@@ -55,6 +59,16 @@ const buttonClick = document.querySelectorAll('button');
             operatorSign()
             console.log(operator)
     }   
+
+        else if (button.className === 'clear') {
+            display.textContent = '0';
+            num1 = '';
+            num2 = '';
+            operator = '';
+            solution = '';
+            const failure = document.querySelector('.failDisplay');
+            failure.textContent = '';
+    }  
 
         else if (button.className === 'equals') {
             num2 = displayedNum;
@@ -101,11 +115,6 @@ const buttonClick = document.querySelectorAll('button');
     }
 }
 )});
-
-
-
-
-
 
 // operator functions
 
