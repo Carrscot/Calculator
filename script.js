@@ -17,7 +17,6 @@ const buttonClick = document.querySelectorAll('button');
 
         if (display.textContent === '0' && button.className != 'operator' && button.className != 'equals' && button.className != 'clear') {
             display.textContent = button.id;
-            console.log('problem1');
         }
         
         else if (button.className === 'decimal' && !display.textContent.includes('.')) {
@@ -26,22 +25,18 @@ const buttonClick = document.querySelectorAll('button');
 
         else if(display.textContent != '0' && operator != '' && button.className != 'operator' && button.className != 'equals' && button.className != 'clear' && display.textContent.length < 1) {
             display.textContent = button.id;
-            console.log('problem2');
         }
 
         else if(display.textContent != '0' && operator != '' && button.className != 'operator' && button.className != 'equals' && button.className != 'clear' && display.textContent === `${solution}`) {
             display.textContent = button.id;
-            console.log('problem2');
         }
 
         else if (display.textContent != '0' && solution != '' && button.className === 'number' || button.className === 'zero') {
             display.textContent = displayedNum + button.id;
-            console.log('this is the problem2');
         }
 
         else if (display.textContent != '0' && button.className === 'number' || button.className === 'zero') {
             display.textContent = displayedNum + button.id;
-            console.log('this is the problem2');
         }
 
         else if (button.className === 'operator' && operator != '') {
@@ -57,7 +52,6 @@ const buttonClick = document.querySelectorAll('button');
             display.textContent = '0'
             operator = '';
             operatorSign()
-            console.log(operator)
     }   
 
         else if (button.className === 'clear') {
